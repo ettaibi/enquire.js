@@ -5,7 +5,7 @@
  */
 
 ;(function (name, context, factory) {
-	var matchMedia = window.matchMedia;
+	var matchMedia = window.matchMedia || (() => { return { matches: false, addListener: () => {}, removeListener: () => {}, }; });;
 
 	if (typeof module !== 'undefined' && module.exports) {
 		module.exports = factory(matchMedia);
